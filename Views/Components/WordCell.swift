@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct WordCell: View {
+    let word: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        HStack{
+            Text(word)
+                .listRowSeparator(.hidden)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .padding()
+                .font(.custom("AvenirNext-bold", size: 22))
+            Text("\(word.count)")
+                .padding()
+                .font(.custom("AvenirNext-bold", size: 22))
+        }
     }
 }
 
 #Preview {
-    WordCell()
+    WordCell(word: "Магнит")
 }
